@@ -1,4 +1,16 @@
 const { request } = require("express");
+const JWT = require('jsonwebtoken');
+const Config= require("../configuration/config")
+
+AdmloginToken = () => {
+	console.log(Config.jwt.secret)
+	return JWT.sign(
+		{
+			
+		},
+		Config.jwt.secret
+	);
+};
 
 module.exports = {
     handle_login: async (req, res, next) => {
@@ -12,11 +24,10 @@ module.exports = {
 	},
     login: async (req, res, next) => {
 		if (Number.isInteger(req.user.id) && req.user.id > 0) {
-			let adm_data = {
-				
-				password: req.password,
-			};
-			const token = AdmloginToken(adm_data);
+			
+			const token = AdmloginToken();
+			console.log({token})
+			
 			res.status(200).json({ status: 1, token: token });
 		} else {
 			let err_data = { password: 'Invalid login details' };

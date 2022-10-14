@@ -11,7 +11,6 @@ const config ={
         secret:"my_secret_keyhjkiujlk"
     },
     jwt:{
-
         secret:"my_secret_keyhjkfgdfrgdfgiujlk"
     }
 }

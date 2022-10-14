@@ -4,7 +4,7 @@ module.exports ={
     findByUsername: async(username)=>{
         return new Promise(function(resolve, reject) {
             db.any(
-                "select username, password from  login where username=($1)",[username]
+                "select username, password,id from  login where username=($1)",[username]
             )
             .then(function(result) { 
                 console.log(result)
