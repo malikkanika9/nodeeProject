@@ -3,7 +3,7 @@ const passport = require("passport");
 const { fun } = require("../controllers/first.controller");
 require('../passport');
 const userController = require('../controllers/user.controller');
-const { validateBody, validateParam, schemas } = require('../helpers/admValidate');
+const { validateBody, schemas } = require('../helpers/admValidate');
 const passportlogIn = passport.authenticate('localAdm', { session: false });
 const router = express.Router();
 router.get("/hello",fun)
