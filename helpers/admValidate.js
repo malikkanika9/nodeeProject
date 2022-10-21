@@ -27,5 +27,19 @@ module.exports = {
             username: Joi.string().required().alphanum().min(4).max(12),
             password: Joi.string().required().min(4).max(12),
         })
-    }
+    },
+
+
+	add_studentData: Joi.object().keys({
+		
+		Name: Joi.string()
+			.required()
+			.min(1)
+			.regex(/^[A-Za-z0-9\s]*$/, 'alphanumeric and space')
+			.max(30),
+		class: Joi.number().required(),
+		Section:Joi.required(),
+		Roll_n: Joi.number().required(),
+		
+	}),
 }

@@ -14,5 +14,8 @@ userController.handle_login,
 userController.login
 )
 
+router.post("/addData",
+
+userController.add_studentData)
 
 module.exports=router;
